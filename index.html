@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jelajah Jember</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-trail-container" id="cursorTrails"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">🌿 Jelajah Jember</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#destinasi">Destinasi</a></li>
+        <li><a href="#kategori">Kategori</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">✦ Discover the Untamed Beauty of Jember</span>
+      <h1 class="hero-title">Jember<br /><em>The Emerald of</em> East Java</h1>
+      <p class="hero-desc">
+        Beragam pesona alam menantimu untuk dijelajahi, dari hijaunya perbukitan dan megahnya pegunungan
+        hingga hamparan pantai dengan birunya laut yang memukau.
+      </p>
+      <div class="hero-actions">
+        <a href="#destinasi" class="btn btn-primary">Jelajahi Sekarang</a>
+        <a href="#kategori" class="btn btn-outline">Lihat Kategori</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">Coast</span><span class="stat-label">Endless Blue</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Hills</span><span class="stat-label">Emerald Landscapes</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Waterfalls</span><span class="stat-label">Hidden Wonders</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- KATEGORI -->
+  <section class="section" id="kategori">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Jelajahi Berdasarkan</span>
+        <h2 class="section-title">Kategori Wisata</h2>
+        <p class="section-desc">Pilih pengalaman alam yang paling sesuai dengan jiwa petualanganmu</p>
+      </div>
+      <div class="kategori-grid">
+        <div class="kategori-card" style="--accent: #2d6a4f;">
+          <div class="kategori-icon">🏔️</div>
+          <h3>Pegunungan & Perbukitan</h3>
+          <p>Gunung Argopuro dengan jalur terpanjang di Jawa dan perbukitan Rembangan yang sejuk</p>
+          <span class="kategori-count">4 Destinasi</span>
+        </div>
+        <div class="kategori-card" style="--accent: #0077b6;">
+          <div class="kategori-icon">🏖️</div>
+          <h3>Pantai & Laut</h3>
+          <p>Papuma, Watu Ulo, Teluk Love hingga Pantai Payangan yang menghadap Samudra Hindia</p>
+          <span class="kategori-count">10 Destinasi</span>
+        </div>
+        <div class="kategori-card" style="--accent: #40916c;">
+          <div class="kategori-icon">🌿</div>
+          <h3>Agrowisata & Perkebunan</h3>
+          <p>Kebun kopi, kakao, dan karet di lereng pegunungan dengan udara segar khas Jember</p>
+          <span class="kategori-count">7 Destinasi</span>
+        </div>
+        <div class="kategori-card" style="--accent: #4cc9f0;">
+          <div class="kategori-icon">💧</div>
+          <h3>Air Terjun</h3>
+          <p>Air Terjun Tancak Kembar dan Tujuh Bidadari tersembunyi di balik lebatnya hutan Jember</p>
+          <span class="kategori-count">11 Destinasi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINASI UNGGULAN -->
+  <section class="section section-dark" id="destinasi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pilihan Terbaik Jember</span>
+        <h2 class="section-title">Destinasi Unggulan Jember</h2>
+        <p class="section-desc">Wisata alam pilihan di Kabupaten Jember yang sayang untuk dilewatkan</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="pantai">Pantai</button>
+        <button class="filter-btn" data-filter="gunung">Gunung</button>
+        <button class="filter-btn" data-filter="air-terjun">Air Terjun</button>
+        <button class="filter-btn" data-filter="hutan">Hutan</button>
+      </div>
+
+      <div class="destinasi-grid" id="destinasiGrid">
+
+        <!-- 1. Pantai Papuma -->
+        <div class="dest-card" data-category="pantai">
+          <div class="dest-img" style="background-image: url('https://imgs.search.brave.com/gUowwLYnGQdsR94cJcstgTcK32e_MmltW0XMb_ZmmiE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vam5ld3Nv/bmxpbmUuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzEx/L3BhbnRhaS1wYXB1/bWEtamVtYmVyLTEu/anBnP3Jlc2l6ZT0x/MDAwLDYwMCZzc2w9/MQ')">
+            <span class="dest-badge">Populer</span>
+            <div class="dest-overlay">
+              <button class="dest-btn-detail">Lihat Detail →</button>
+            </div>
+          </div>
+          <div class="dest-info">
+            <div class="dest-meta">
+              <span class="dest-tag">Pantai</span>
+              <span class="dest-rating">⭐ 4.9</span>
+            </div>
+            <h3 class="dest-name">Pantai Papuma</h3>
+            <p class="dest-loc">📍 Ambulu, Jember</p>
+            <p class="dest-desc">Pantai berpasir putih yang diapit hutan pinus lebat dengan formasi batu karang eksotis di tepi lautnya. Salah satu pantai terindah di Jawa Timur, berjarak sekitar 37 km dari pusat kota Jember.</p>
+            <div class="dest-footer">
+              <span class="dest-price">Mulai Rp 15.000</span>
+              <button class="dest-save" aria-label="Simpan destinasi">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Pantai Watu Ulo -->
+        <div class="dest-card" data-category="pantai">
+          <div class="dest-img" style="background-image: url('https://imgs.search.brave.com/3H9bJ33ayq55hlwrwNeFZx3n92SgSspZh3hhAOHlXvY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4w/LXByb2R1Y3Rpb24t/aW1hZ2VzLWtseS5h/a2FtYWl6ZWQubmV0/L2tFQU9LNjNIQTlx/NGt2VW9rbWxrM1Nj/YmNIWT0vMTI4MHg3/MjAvc21hcnQvZmls/dGVyczpxdWFsaXR5/KDc1KTpzdHJpcF9p/Y2MoKS9rbHktbWVk/aWEtcHJvZHVjdGlv/bi9tZWRpYXMvMjc1/NzYwOS9vcmlnaW5h/bC8wMDcyMDQ4MDBf/MTU1MzE2MTAzNi1Q/YW50YWlfV2F0dV9V/bG9fX1N1bWJlcl9p/U3RvY2tfLmpwZw')">
+            <span class="dest-badge dest-badge-new">Iconic</span>
+            <div class="dest-overlay">
+              <button class="dest-btn-detail">Lihat Detail →</button>
+            </div>
+          </div>
+          <div class="dest-info">
+            <div class="dest-meta">
+              <span class="dest-tag">Pantai</span>
+              <span class="dest-rating">⭐ 4.7</span>
+            </div>
+            <h3 class="dest-name">Pantai Watu Ulo</h3>
+            <p class="dest-loc">📍 Ambulu, Jember</p>
+            <p class="dest-desc">Pantai legendaris dengan formasi batu panjang bersisik menyerupai ular raksasa yang menjulur ke laut. Namanya berasal dari bahasa Jawa: <em>watu</em> (batu) dan <em>ulo</em> (ular).</p>
+            <div class="dest-footer">
+              <span class="dest-price">Mulai Rp 10.000</span>
+              <button class="dest-save" aria-label="Simpan destinasi">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Pantai Payangan / Teluk Love -->
+        <div class="dest-card" data-category="pantai">
+          <div class="dest-img" style="background-image: url('https://imgs.search.brave.com/L0UjJhjuGp7qJ5GJAykrNrfQQ3HQlYfjXCb1hoc-k6E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MTUvZDMvYzgvYmIv/dGVsdWstbG92ZS5q/cGc')">
+            <div class="dest-overlay">
+              <button class="dest-btn-detail">Lihat Detail →</button>
+            </div>
+          </div>
+          <div class="dest-info">
+            <div class="dest-meta">
+              <span class="dest-tag">Pantai</span>
+              <span class="dest-rating">⭐ 4.6</span>
+            </div>
+            <h3 class="dest-name">Teluk Love Payangan</h3>
+            <p class="dest-loc">📍 Ambulu, Jember</p>
+            <p class="dest-desc">Teluk berbentuk hati alami yang muncul saat air surut, dikelilingi tebing hijau dan ombak Samudra Hindia yang dramatis. Spot foto sunrise paling hits di Jember.</p>
+            <div class="dest-footer">
+              <span class="dest-price">Mulai Rp 10.000</span>
+              <button class="dest-save" aria-label="Simpan destinasi">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Air Terjun Tancak -->
+        <div class="dest-card" data-category="air-terjun">
+          <div class="dest-img" style="background-image: url('https://imgs.search.brave.com/GaSVNgwi6xGHnOL0NBl2XIwIjX5ykAZFqYUWJUpeQOk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90dWd1/amF0aW0uaWQvd3At/Y29udGVudC91cGxv/YWRzLzIwMjUvMDQv/YWlyX3Rlcmp1bl90/YW5qYWtfMS1zY2Fs/ZWQud2VicA')">
+            <span class="dest-badge">Populer</span>
+            <div class="dest-overlay">
+              <button class="dest-btn-detail">Lihat Detail →</button>
+            </div>
+          </div>
+          <div class="dest-info">
+            <div class="dest-meta">
+              <span class="dest-tag">Air Terjun</span>
+              <span class="dest-rating">⭐ 4.8</span>
+            </div>
+            <h3 class="dest-name">Air Terjun Tancak</h3>
+            <p class="dest-loc">📍 Panti, Jember</p>
+            <p class="dest-desc">Air terjun kembar setinggi ±100 meter yang mengalir di tengah perkebunan kopi dan hutan tropis. Udara sejuk khas pegunungan dan jalur trekking yang menantang menjadi daya tarik utamanya.</p>
+            <div class="dest-footer">
+              <span class="dest-price">Mulai Rp 10.000</span>
+              <button class="dest-save" aria-label="Simpan destinasi">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Gunung Argopuro -->
+        <div class="dest-card" data-category="gunung">
+          <div class="dest-img" style="background-image: url('https://imgs.search.brave.com/xeuWZDmF8hixwS7Dnbej7nVZx9N4BMT6TXsUJrqIfIQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jYXRh/dGFuYWxhbS53b3Jk/cHJlc3MuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE4LzAy/L2FyZy0xMC5qcGc_/dz02MTYmaD00NjI')">
+            <span class="dest-badge dest-badge-new">Tracking</span>
+            <div class="dest-overlay">
+              <button class="dest-btn-detail">Lihat Detail →</button>
+            </div>
+          </div>
+          <div class="dest-info">
+            <div class="dest-meta">
+              <span class="dest-tag">Gunung</span>
+              <span class="dest-rating">⭐ 4.9</span>
+            </div>
+            <h3 class="dest-name">Gunung Argopuro</h3>
+            <p class="dest-loc">📍 Perbatasan Jember–Probolinggo</p>
+            <p class="dest-desc">Jalur pendakian terpanjang di Pulau Jawa dengan puncak Rengganis di ketinggian 3.088 mdpl. Sepanjang jalur terdapat padang savana luas, danau Taman Hidup, dan situs petilasan bersejarah.</p>
+            <div class="dest-footer">
+              <span class="dest-price">Mulai Rp 25.000</span>
+              <button class="dest-save" aria-label="Simpan destinasi">♡</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Rembangan -->
+        <div class="dest-card" data-category="hutan">
+          <div class="dest-img" style="background-image: url('https://imgs.search.brave.com/l-L6HQrz7sQEF6kBmS91LR2-sf88A5fdZRQ9jATPbTc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93aXNh/dGFnby5jb20vd3At/Y29udGVudC91cGxv/YWRzL2xvY2FsLWlt/YWdlcy9sb2NhbC1w/dW5jYWstcmVtYmFu/Z2FuLTE3NDQ0MzU5/NzEtNC53ZWJw')">
+            <div class="dest-overlay">
+              <button class="dest-btn-detail">Lihat Detail →</button>
+            </div>
+          </div>
+          <div class="dest-info">
+            <div class="dest-meta">
+              <span class="dest-tag">Hutan</span>
+              <span class="dest-rating">⭐ 4.5</span>
+            </div>
+            <h3 class="dest-name">Wisata Alam Rembangan</h3>
+            <p class="dest-loc">📍 Arjasa, Jember</p>
+            <p class="dest-desc">Kawasan wisata alam di lereng Gunung Argopuro, 650 mdpl, dengan udara sejuk dan hamparan kebun kopi serta kolam renang alami. Tempat favorit keluarga sekaligus titik pandang kota Jember dari ketinggian.</p>
+            <div class="dest-footer">
+              <span class="dest-price">Mulai Rp 15.000</span>
+              <button class="dest-save" aria-label="Simpan destinasi">♡</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section class="section" id="galeri">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Momen Terbaik</span>
+        <h2 class="section-title">Galeri Alam</h2>
+        <p class="section-desc">Sepintas keindahan alam Nusantara dari lensa para petualang</p>
+      </div>
+      <div class="galeri-grid">
+        <div class="galeri-item galeri-large">
+          <img src="https://imgs.search.brave.com/gUowwLYnGQdsR94cJcstgTcK32e_MmltW0XMb_ZmmiE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vam5ld3Nv/bmxpbmUuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzEx/L3BhbnRhaS1wYXB1/bWEtamVtYmVyLTEu/anBnP3Jlc2l6ZT0x/MDAwLDYwMCZzc2w9/MQ" alt="Pantai Papuma Jember" loading="lazy" />
+          <div class="galeri-caption">Pantai Papuma, Ambulu — Jember</div>
+        </div>
+        <div class="galeri-item">
+          <img src="https://imgs.search.brave.com/3H9bJ33ayq55hlwrwNeFZx3n92SgSspZh3hhAOHlXvY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4w/LXByb2R1Y3Rpb24t/aW1hZ2VzLWtseS5h/a2FtYWl6ZWQubmV0/L2tFQU9LNjNIQTlx/NGt2VW9rbWxrM1Nj/YmNIWT0vMTI4MHg3/MjAvc21hcnQvZmls/dGVyczpxdWFsaXR5/KDc1KTpzdHJpcF9p/Y2MoKS9rbHktbWVk/aWEtcHJvZHVjdGlv/bi9tZWRpYXMvMjc1/NzYwOS9vcmlnaW5h/bC8wMDcyMDQ4MDBf/MTU1MzE2MTAzNi1Q/YW50YWlfV2F0dV9V/bG9fX1N1bWJlcl9p/U3RvY2tfLmpwZw" alt="Pantai Watu Ulo Jember" loading="lazy" />
+          <div class="galeri-caption">Pantai Watu Ulo, Jember</div>
+        </div>
+        <div class="galeri-item">
+          <img src="https://imgs.search.brave.com/xeuWZDmF8hixwS7Dnbej7nVZx9N4BMT6TXsUJrqIfIQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jYXRh/dGFuYWxhbS53b3Jk/cHJlc3MuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE4LzAy/L2FyZy0xMC5qcGc_/dz02MTYmaD00NjI" alt="Gunung Argopuro Jember" loading="lazy" />
+          <div class="galeri-caption">Gunung Argopuro, Jember</div>
+        </div>
+        <div class="galeri-item">
+          <img src="https://imgs.search.brave.com/GaSVNgwi6xGHnOL0NBl2XIwIjX5ykAZFqYUWJUpeQOk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90dWd1/amF0aW0uaWQvd3At/Y29udGVudC91cGxv/YWRzLzIwMjUvMDQv/YWlyX3Rlcmp1bl90/YW5qYWtfMS1zY2Fs/ZWQud2VicA" alt="Air Terjun Tancak Jember" loading="lazy" />
+          <div class="galeri-caption">Air Terjun Tancak, Panti — Jember</div>
+        </div>
+        <div class="galeri-item">
+          <img src="https://imgs.search.brave.com/l-L6HQrz7sQEF6kBmS91LR2-sf88A5fdZRQ9jATPbTc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93aXNh/dGFnby5jb20vd3At/Y29udGVudC91cGxv/YWRzL2xvY2FsLWlt/YWdlcy9sb2NhbC1w/dW5jYWstcmVtYmFu/Z2FuLTE3NDQ0MzU5/NzEtNC53ZWJw" alt="Rembangan Jember" loading="lazy" />
+          <div class="galeri-caption">Wisata Alam Rembangan, Jember</div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA NEWSLETTER -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-text">
+          <h2>Jangan Lewatkan Destinasi Baru</h2>
+          <p>Dapatkan rekomendasi wisata alam terbaru langsung di inboxmu</p>
+        </div>
+        <form class="cta-form" id="ctaForm">
+          <input type="email" placeholder="Masukkan email kamu..." required aria-label="Email" />
+          <button type="submit" class="btn btn-primary">Berlangganan</button>
+        </form>
+        <p class="cta-note" id="ctaSuccess" hidden>✅ Terima kasih! Kamu sudah terdaftar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="kontak">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">🌿 Jelajah Jember</a>
+          <p>Platform informasi wisata alam terlengkap untuk para petualang Indonesia.</p>
+          <div class="social-links">
+            <!-- Instagram -->
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                <defs>
+                  <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+                    <stop offset="0%" stop-color="#fdf497"/>
+                    <stop offset="5%" stop-color="#fdf497"/>
+                    <stop offset="45%" stop-color="#fd5949"/>
+                    <stop offset="60%" stop-color="#d6249f"/>
+                    <stop offset="90%" stop-color="#285AEB"/>
+                  </radialGradient>
+                </defs>
+                <rect width="512" height="512" rx="115" ry="115" fill="url(#ig-grad)"/>
+                <rect x="86" y="86" width="340" height="340" rx="90" ry="90" fill="none" stroke="#fff" stroke-width="36"/>
+                <circle cx="256" cy="256" r="100" fill="none" stroke="#fff" stroke-width="36"/>
+                <circle cx="365" cy="148" r="28" fill="#fff"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="#" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                <rect width="512" height="512" rx="115" ry="115" fill="#FF0000"/>
+                <polygon points="196,160 196,352 356,256" fill="#fff"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                <circle cx="256" cy="256" r="256" fill="#1877F2"/>
+                <path d="M284 512V315h66l10-77h-76v-49c0-22 11-44 45-44h35v-66s-32-5-62-5c-63 0-104 38-104 107v57h-70v77h70v197a258 258 0 0 0 86 0z" fill="#fff"/>
+              </svg>
+            </a>
+            <!-- X (Twitter) -->
+            <a href="#" aria-label="X (Twitter)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                <rect width="512" height="512" rx="115" ry="115" fill="#000"/>
+                <path d="M300 230 410 90h-42L280 204 196 90H90l116 169L90 422h42l101-118 88 118h106L300 230zm-36 42-12-17L130 115h56l99 141 12 17 126 181h-56L264 272z" fill="#fff"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Destinasi</h4>
+          <ul>
+            <li><a href="#">Pantai Papuma</a></li>
+            <li><a href="#">Pantai Watu Ulo</a></li>
+            <li><a href="#">Teluk Love Payangan</a></li>
+            <li><a href="#">Air Terjun Tancak</a></li>
+            <li><a href="#">Gunung Argopuro</a></li>
+            <li><a href="#">Wisata Alam Rembangan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kategori</h4>
+          <ul>
+            <li><a href="#">Pegunungan & Perbukitan</a></li>
+            <li><a href="#">Pantai & Laut</a></li>
+            <li><a href="#">Agrowisata & Perkebunan</a></li>
+            <li><a href="#">Air Terjun</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>📧 wisatajember@gmail.com</li>
+            <li>📞 +62 896 9991 3178</li>
+            <li>📍 Jember, Jawa Timur</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Jelajah Jember. Dibuat dengan ❤️ untuk alam Indonesia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
